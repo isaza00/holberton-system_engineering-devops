@@ -1,2 +1,2 @@
 #!/bin/bash
-sort -k7nr | head -n 11 | cut -f1
+sort -k7nr | cut -f1 | uniq | head -n 11

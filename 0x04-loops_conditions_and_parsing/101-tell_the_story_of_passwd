@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Read:
+#	IFS (internal field separator)
+#	Understanding /etc/passwd
+#The file /etc/passwd has already been covered in a previous
+#project and you should be familiar with it. Today we will make up a story based on it.
+#Write a Bash script that displays the content of the file /etc/passwd,
+#using the while loop + IFS.
+#Format: The user USERNAME is part of the GROUP_ID gang,
+#lives in HOME_DIRECTORY and rides COMMAND/SHELL. USER ID's
+#place is protected by the passcode PASSWORD,
+#more info about the user here: USER ID INFO
+
+input="/etc/passwd"
+while IFS= read -r line
+do
+  username=$(echo "$line" | cut -d: -f 1)
+  group_id=$(echo "$line" | cut -d: -f 4)
+  home_directory=$(echo "$line" | cut -d: -f 6)
+  command=$(echo "$line" | cut -d: -f 7)
+  user_id=$(echo "$line" | cut -d: -f 3)
+  password=$(echo "$line" | cut -d: -f 2)
+  user_id_info=$(echo "$line" | cut -d: -f 5)
+  echo "The user $username is part of the $group_id gang, lives in $home_directory and rides $command. $user_id's place is protected by the passcode $password, more info about the user here: $user_id_info"
+done < "$input"

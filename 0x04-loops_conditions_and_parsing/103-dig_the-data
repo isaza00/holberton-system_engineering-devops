@@ -11,4 +11,4 @@
 #    Ordered from the greatest to the lowest number of occurrences
 #    You must use awk
 
-awk '{print $1,$9}' "apache-access.log"
+awk '{print $1,$9}' "apache-access.log" | sort | uniq -c | sort -nr

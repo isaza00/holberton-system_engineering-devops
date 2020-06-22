@@ -6,4 +6,4 @@
 #Requirements:
 #    You must use kill
 
-kill $(pgrep -la bash | grep ./4-to_infinity_and_beyond | cut -d ' ' -f 1)
+kill "$(pgrep -la bash | grep ./4-to_infinity_and_beyond | cut -d ' ' -f 1)"

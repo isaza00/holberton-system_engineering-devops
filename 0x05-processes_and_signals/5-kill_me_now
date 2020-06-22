@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#We killed our 4-to_infinity_and_beyond process using ctrl+c in the previous task, there is actually another way to do this.
+
+#Write a Bash script that kills 4-to_infinity_and_beyond process.
+
+#Requirements:
+#    You must use kill
+
+kill $(pgrep -la bash | grep ./4-to_infinity_and_beyond | cut -d ' ' -f 1)

@@ -40,24 +40,26 @@
 
 case "$1" in
   start)
-    echo "manage_my_process started"
     ./manage_my_process &
     echo $! > /var/run/my_process.pid
+    echo "manage_my_process started"
     ;;
   stop)
-    echo "manage_my_process stopped"
     sudo pkill -f "bash ./manage_my_process"
     sudo rm /var/run/my_process.pid
+    echo "manage_my_process stopped"
     ;;
   restart)
-    echo "manage_my_process restarted"
     sudo pkill -f "bash ./manage_my_process"
     sudo rm /var/run/my_process.pid
     ./manage_my_process &
     echo $! > /var/run/my_process.pid
+    echo "manage_my_process restarted"
     ;;
   *)
     echo "Usage: manage_my_process {start|stop|restart}"
+    exit 1
     ;;
 esac
+
 exit 0

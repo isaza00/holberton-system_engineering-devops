@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#open port 98 to get messages through telnet. (on othe terminal $telnet localhost 98)
+sudo nc -l 98

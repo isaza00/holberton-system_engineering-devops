@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# install haproxy as load balancer for two servers
+apt-get -y update
+apt-get -y install haproxy
+echo "ENABLED=1" >> /etc/default/haproxy
+echo -e "/nlisten www
+    bind :80
+    balance roundrobin
+    server 1576-web-01 34.74.112.45 check
+    server 1576-web-02 35.237.185.184 check" >> /etc/haproxy/haproxy.cfg
+service haproxy restart

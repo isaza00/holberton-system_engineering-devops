@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # install ngix, setup it up on port 80 HTTP 
-# and write Holberton School in index file
-# add a custom header with hostname as value
 apt-get -y update
 apt-get -y install nginx
 echo 'Holberton School' > /var/www/html/index.html

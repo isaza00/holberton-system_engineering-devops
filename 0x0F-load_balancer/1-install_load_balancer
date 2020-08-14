@@ -2,9 +2,8 @@
 # install haproxy as load balancer for two servers
 apt-get -y update
 add-apt-repository -y ppa:vbernat/haproxy-1.6
-apt-get -y update
 apt-get -y install haproxy=1.6.*
-echo -e "/nlisten www
+echo -e "\nlisten www
     bind :80
     balance roundrobin
     server 1576-web-01 34.74.112.45 check

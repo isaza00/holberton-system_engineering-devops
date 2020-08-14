@@ -2,7 +2,6 @@
 # install haproxy as load balancer for two servers
 apt-get -y update
 apt-get -y install haproxy
-echo "ENABLED=1" >> /etc/default/haproxy
 echo -e "/nlisten www
     bind :80
     balance roundrobin

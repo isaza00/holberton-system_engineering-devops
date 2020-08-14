@@ -1,7 +1,36 @@
 
-
+# Docker steps to complete the challenge on PLD
+ 
+# Install docker (Ubuntu 20.04) https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04-es
+sudo apt update
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+sudo apt update
+apt-cache policy docker-ce
+sudo apt install docker-ce
+sudo systemctl status docker
+ 
+# Create container
+sudo docker run -p 8080:80 -d -it nginx
+sudo docker exec -ti <image_id> bash
+apt-get update
+apt-get install vim
+vim /usr/share/nginx/html/index.html
+sudo docker commit <container_name> # Create new image from the modified container - Will create a none repository (none)
+sudo docker tag <new_image_id> <new_image_name> # Asign name to the new image
+sudo docker commit <container_name> <new_image_name> # This command resume the 2 previos steps
+docker login -u=<user> -p=<password> # Credentials from your dockerhub account
+sudo docker push <image_name>
+ 
+# Download the image from dockerhub
+sudo docker pull <image_name>
 For this project, students are expected to look at these concepts:
 
+
+
+
+proyect
     Network basics
     Docker
     Web stack debugging

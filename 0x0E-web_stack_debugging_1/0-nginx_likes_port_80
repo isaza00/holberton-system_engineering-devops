@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # create link between both defaul files
 rm /etc/nginx/sites-enabled/default
-ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#create link between both defaul files
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
+sudo echo 1000 > /var/run/nginx.pid

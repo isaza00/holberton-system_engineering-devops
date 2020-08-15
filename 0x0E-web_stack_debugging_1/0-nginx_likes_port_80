@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # create link between both defaul files
-cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-service nginx restart
+sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart

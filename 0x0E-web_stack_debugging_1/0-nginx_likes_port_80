@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# create link between both defaul files
+sudo pkill -f nginx & wait $!
+service nginx start
+rm /etc/nginx/sites-enabled/default
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+service nginx restart

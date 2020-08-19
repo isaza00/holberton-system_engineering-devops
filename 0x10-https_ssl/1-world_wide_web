@@ -7,8 +7,7 @@ function printing {
     do
             full_domain=$var.$1
             dig "$full_domain" |\
-            grep -e "^$var" |\
-            awk -vvar=$var '{print "The subdomain " var " is a " $4 " record and points to " $5}'
+            awk -v var=$var '/ANSWER SECTION:/ {getline; print "The subdomain " var " is a " $4 " record and points to " $5}'
     done
 }
 if [ $# == 1 ]; then

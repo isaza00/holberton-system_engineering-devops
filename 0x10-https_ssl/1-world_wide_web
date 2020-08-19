@@ -16,5 +16,5 @@ if [ $# == 1 ]; then
     printing $domain www lb-01 web-01 web-02 
 elif [ $# == 2 ]; then
     subdomain=$2
-    printing $domain $2
+    printing $domain $subdomain
 fi

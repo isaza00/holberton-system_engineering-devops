@@ -6,15 +6,14 @@ function printing {
     for var in "$@"
     do
             full_domain=$var.$1
-            dig $full_domain |\
+            dig "$full_domain" |\
             grep -e "^$var" |\
-            awk -vvar=$var '\
-            {print "The subdomain " var " is a " $4 " record and points to " $5}'
+            awk -vvar=$var '{print "The subdomain " var " is a " $4 " record and points to " $5}'
     done
 }
 if [ $# == 1 ]; then
-    printing $domain www lb-01 web-01 web-02 
+    printing "$domain" www lb-01 web-01 web-02 
 elif [ $# == 2 ]; then
     subdomain=$2
-    printing $domain $subdomain
+    printing "$domain" "$subdomain"
 fi

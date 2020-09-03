@@ -1,4 +1,26 @@
 
+commands to execute these tasks
+
+create user if not exists 'holberton_user'@'localhost' identified by 'projectcorrection280hbtn';
+GRANT REPLICATION CLIENT ON *.* to 'holberton_user'@'localhost' identified by 'projectcorrection280hbtn';
+show grants for 'holberton_user'@'localhost';
+
+CREATE DATABASE IF NOT EXISTS tyrell_corp;
+use tyrell_corp;
+CREATE TABLE IF NOT EXISTS nexus6 (id INT, name VARCHAR(256));
+INSERT INTO nexus6 VALUES (1, "Leon");
+GRANT SELECT ON tyrell_corp.* TO 'holberton_user'@'localhost';
+FLUSH PRIVILEGES;
+
+create user if not exists 'replica_user'@'%' identified by 'root';
+GRANT REPLICATION SLAVE ON *.* to 'replica_user'@'%' identified by 'root';
+FLUSH PRIVILEGES;
+show grants for 'replica_user'@'%';
+
+GRANT SELECT ON mysql.user TO 'holberton_user'@'localhost';
+FLUSH PRIVILEGES;
+show grants for 'holberton_user'@'localhost';
+
 
 For this project, students are expected to look at these concepts:
 

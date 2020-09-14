@@ -6,11 +6,9 @@ import requests
 import sys
 
 
-api_users = "https://jsonplaceholder.typicode.com/users/"
-
-file_name = "todo_all_employees.json"
-
 if __name__ == "__main__":
+    api_users = "https://jsonplaceholder.typicode.com/users/"
+    file_name = "todo_all_employees.json"
     dic = {}
     lista = []
     r2 = requests.get(api_users)

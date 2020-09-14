@@ -6,13 +6,12 @@ import requests
 import sys
 
 
-api_todos = "https://jsonplaceholder.typicode.com/users/"\
-          + sys.argv[1] + "/todos"
-api_user = "https://jsonplaceholder.typicode.com/users/"\
-          + sys.argv[1]
-file_name = "USER_ID.json"
-
 if __name__ == "__main__":
+    api_todos = "https://jsonplaceholder.typicode.com/users/"\
+                + sys.argv[1] + "/todos"
+    api_user = "https://jsonplaceholder.typicode.com/users/"\
+               + sys.argv[1]
+    file_name = "USER_ID.json"
     lista = []
     r1 = requests.get(api_todos)
     r2 = requests.get(api_user)

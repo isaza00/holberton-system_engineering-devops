@@ -6,14 +6,12 @@ import requests
 import sys
 
 
-api_todos = "https://jsonplaceholder.typicode.com/users/"\
-          + sys.argv[1] + "/todos"
-api_user = "https://jsonplaceholder.typicode.com/users/"\
-          + sys.argv[1]
-file_name = "USER_ID.csv"
-
 if __name__ == "__main__":
-    tasks_done = 0
+    api_todos = "https://jsonplaceholder.typicode.com/users/"\
+                + sys.argv[1] + "/todos"
+    api_user = "https://jsonplaceholder.typicode.com/users/"\
+               + sys.argv[1]
+    file_name = "USER_ID.csv"
     r1 = requests.get(api_todos)
     r2 = requests.get(api_user)
     user_name = r2.json().get("name")

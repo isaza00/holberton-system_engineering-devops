@@ -11,7 +11,7 @@ if __name__ == "__main__":
                 + sys.argv[1] + "/todos"
     api_user = "https://jsonplaceholder.typicode.com/users/"\
                + sys.argv[1]
-    file_name = "USER_ID.json"
+    file_name = sys.argv[1] + ".json"
     lista = []
     r1 = requests.get(api_todos)
     r2 = requests.get(api_user)

@@ -16,7 +16,7 @@ if __name__ == "__main__":
     r2 = requests.get(api_user)
     user_name = r2.json().get("name")
     with open(file_name, mode="w", encoding="utf-8") as f:
-        writer = csv.writer(f, quoting=csv.QUOTE_NONNUMERIC)
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for item in r1.json():
             writer.writerow([str(item.get("userId")),
                             user_name, str(item.get("completed")),

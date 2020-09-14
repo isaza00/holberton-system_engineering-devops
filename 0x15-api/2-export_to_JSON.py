@@ -18,7 +18,7 @@ if __name__ == "__main__":
     for item in r1.json():
         lista.append({"task": item.get("title"),
                       "completed": item.get("completed"),
-                      "username": r2.json().get("name")})
+                      "username": r2.json().get("username")})
     dic = {sys.argv[1]: lista}
     with open(file_name, mode="w", encoding="utf-8") as f:
         f.write(json.dumps(dic))

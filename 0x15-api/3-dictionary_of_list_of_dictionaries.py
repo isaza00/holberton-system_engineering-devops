@@ -19,7 +19,7 @@ if __name__ == "__main__":
         for item in r1.json():
             lista.append({"task": item.get("title"),
                           "completed": item.get("completed"),
-                          "username": user.get("name")})
+                          "username": user.get("username")})
         dic[user.get("id")] = lista
         lista = []
     with open(file_name, mode="w", encoding="utf-8") as f:

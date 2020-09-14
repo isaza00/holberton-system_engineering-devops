@@ -16,7 +16,7 @@ if __name__ == "__main__":
     for task in r1.json():
         if task.get("completed") is True:
             tasks_done += 1
-    print("Employee {} is done with tasks ({}/{}):".
+    print("Employee {} is done with tasks({}/{}):".
           format(r2.json().get("name"),
                  tasks_done,
                  len(r1.json())))

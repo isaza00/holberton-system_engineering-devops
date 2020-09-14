@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 """ fetch data from api and display it """
 
-import csv
-import requests
-import sys
-
 
 if __name__ == "__main__":
+    import csv
+    import requests
+    import sys
     api_todos = "https://jsonplaceholder.typicode.com/users/"\
                 + sys.argv[1] + "/todos"
     api_user = "https://jsonplaceholder.typicode.com/users/"\

@@ -14,7 +14,7 @@ if __name__ == "__main__":
     file_name = sys.argv[1] + ".csv"
     r1 = requests.get(api_todos)
     r2 = requests.get(api_user)
-    user_name = r2.json().get("name")
+    user_name = r2.json().get("username")
     with open(file_name, mode="w", encoding="utf-8") as f:
         writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for item in r1.json():

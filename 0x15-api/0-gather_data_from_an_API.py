@@ -5,12 +5,11 @@ import requests
 import sys
 
 
-api_todos = "https://jsonplaceholder.typicode.com/users/"\
-          + sys.argv[1] + "/todos"
-api_user = "https://jsonplaceholder.typicode.com/users/"\
-          + sys.argv[1]
-
 if __name__ == "__main__":
+    api_todos = "https://jsonplaceholder.typicode.com/users/"\
+                + sys.argv[1] + "/todos"
+    api_user = "https://jsonplaceholder.typicode.com/users/"\
+               + sys.argv[1]
     tasks_done = 0
     r1 = requests.get(api_todos)
     r2 = requests.get(api_user)

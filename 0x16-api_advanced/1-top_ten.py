@@ -14,4 +14,4 @@ def top_ten(subreddit):
         for dic in r.json().get('data').get('children'):
             print(dic.get('data').get('title'))
     else:
-        print("None")
+        print(None)

@@ -9,7 +9,8 @@ def recurse(subreddit, hot_list=[], after="None"):
     url = "https://www.reddit.com/r/" + subreddit + "/hot/.json"
     r = requests.get(url,
                      headers={'User-agent': 'norman'},
-                     params={"limit": 100, "after": after})
+                     params={"limit": 100, "after": after},
+                     allow_redirects=False)
     if after is "fin" or after is None:
         return hot_list
     elif r.json().get('data').get('children'):

@@ -9,7 +9,7 @@ def number_of_subscribers(subreddit):
     url = "https://www.reddit.com/r/" + subreddit + "/about.json"
     r = requests.get(url, headers={'User-agent': 'norman'},
                      allow_redirects=False)
-    if r.json().get("data").get("created") is not None:
+    if r.status_code == 200:
         return r.json().get("data").get("subscribers")
     else:
         return 0

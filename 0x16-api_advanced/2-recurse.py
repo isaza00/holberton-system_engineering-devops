@@ -13,7 +13,7 @@ def recurse(subreddit, hot_list=[], after="None"):
                      allow_redirects=False)
     if after is "fin" or after is None:
         return hot_list
-    elif r.json().get('data').get('children'):
+    elif r.status_code == 200:
         for dic in r.json().get('data').get('children'):
             hot_list.append(dic.get('data').get('title'))
         after = r.json().get('data').get('after')

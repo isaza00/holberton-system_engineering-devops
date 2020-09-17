@@ -11,7 +11,7 @@ def top_ten(subreddit):
                      headers={'User-agent': 'norman'},
                      params={"limit": 10},
                      allow_redirects=False)
-    if r.json().get('data').get('children'):
+    if r.status_code == 200:
         for dic in r.json().get('data').get('children'):
             print(dic.get('data').get('title'))
     else:
